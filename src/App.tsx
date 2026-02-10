@@ -212,12 +212,12 @@ export default function App() {
                 <Award size={16} className="text-amber-500" /> {COMPANY_INFO.cert}
               </span>
             </div>
-            <h2 className="text-4xl md:text-8xl font-black text-white mb-8 leading-[1.2] md:leading-[1.1] tracking-tighter break-keep">
+            <h2 className="text-3xl sm:text-4xl md:text-8xl font-black text-white mb-8 leading-[1.2] md:leading-[1.1] tracking-tighter break-keep font-sans">
               문화를 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">잇고</span>, <br className="md:hidden" />
               가치를 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-200">빚다</span>
             </h2>
-            <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-              투해펀은 예술가의 상상력과 지역 주민의 삶을 연결하여<br className="hidden md:block" />
+            <p className="text-xl text-slate-200 max-w-2xl mx-auto mb-12 font-light leading-relaxed break-keep">
+              투해펀은 예술가의 상상력과 지역 주민의 삶을 연결하여 <br className="hidden md:block" />
               지속 가능한 문화 예술 생태계를 만들어가는 사회적 기업입니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -305,7 +305,7 @@ export default function App() {
                       {item.i}
                     </div>
                     <h4 className="text-xl font-bold mb-3 text-white break-keep">{item.t}</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed break-all">{item.d}</p>
+                    <p className="text-slate-400 text-sm leading-relaxed break-keep">{item.d}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -374,26 +374,26 @@ export default function App() {
           </FadeIn>
           <div className="relative">
             {/* Center Line */}
-            <div className="absolute left-[20px] md:left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-amber-500/50 via-slate-800 to-transparent"></div>
+            <div className="absolute left-6 md:left-0 top-0 bottom-0 w-[1px] md:w-[2px] bg-gradient-to-b from-amber-500/50 via-slate-800 to-transparent"></div>
 
             <div className="space-y-12">
               {HISTORY.map((yearGroup, idx) => (
                 <FadeIn key={idx} delay={idx * 0.1}>
                   <div className="relative pl-12 md:pl-20 group">
                     {/* Year Marker */}
-                    <div className="absolute left-0 top-0 w-[40px] md:w-[60px] h-[40px] md:h-[60px] bg-[#020617] border-2 border-amber-500 rounded-2xl flex items-center justify-center z-10 -translate-x-1/2 md:translate-x-[-50%] group-hover:scale-110 transition shadow-[0_0_20px_rgba(245,158,11,0.2)]">
-                      <span className="text-amber-500 font-black text-sm md:text-base">{yearGroup.year.substring(2)}</span>
+                    <div className="absolute left-6 md:left-0 top-0 w-14 md:w-[60px] h-10 md:h-[60px] bg-[#020617] border-2 border-amber-500 rounded-xl md:rounded-2xl flex items-center justify-center z-10 -translate-x-1/2 md:translate-x-[-50%] group-hover:scale-110 transition shadow-[0_0_20px_rgba(245,158,11,0.2)]">
+                      <span className="text-amber-500 font-black text-[10px] md:text-base leading-none text-center px-1">{yearGroup.year.includes('-') ? yearGroup.year.replace('20', '').replace('20', '') : yearGroup.year.substring(2)}</span>
                     </div>
 
-                    <div className="bg-[#111]/40 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-amber-500/30 transition-all duration-500">
-                      <h3 className="text-3xl font-black text-white mb-8 tracking-tighter flex items-center gap-4 break-keep">
-                        {yearGroup.year} <span className="text-amber-500/20 text-5xl">/</span>
+                    <div className="bg-[#111]/40 backdrop-blur-md px-6 py-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-amber-500/30 transition-all duration-500">
+                      <h3 className="text-2xl md:text-3xl font-black text-white mb-6 md:mb-8 tracking-tighter flex items-center gap-3 md:gap-4 break-keep">
+                        {yearGroup.year} <span className="text-amber-500/20 text-4xl md:text-5xl">/</span>
                       </h3>
                       <div className="space-y-6">
                         {yearGroup.events.map((event, eventIdx) => (
                           <div key={eventIdx} className="flex items-start gap-5 group/item">
-                            <div className="w-2 h-2 rounded-full bg-amber-500 mt-2.5 shrink-0 group-hover/item:scale-150 transition shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
-                            <p className="text-slate-200 leading-relaxed text-lg md:text-xl font-medium group-hover/item:text-white transition break-keep">{event}</p>
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-500 mt-2 md:mt-2.5 shrink-0 group-hover/item:scale-150 transition shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+                            <p className="text-slate-200 leading-relaxed text-base md:text-xl font-medium group-hover/item:text-white transition">{event}</p>
                           </div>
                         ))}
                       </div>
