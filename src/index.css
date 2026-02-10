@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer base {
+  .word-keep {
+    word-break: keep-all;
+  }
+}
